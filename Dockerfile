@@ -1,9 +1,8 @@
-FROM sonatype/nexus3:3.18.1
+FROM sonatype/nexus3:3.45.1
+LABEL name="Nexus Repository Manager with composer"
+LABEL author="Jhonatan Morais <jhonatanvinicius@gmail.com>, Sileno Brito <silenobrito@gmail.com>"
 
-MAINTAINER Jhonatan Morais <jhonatanvinicius@gmail.com>
-
-COPY nexus-repository-composer-0.0.2.jar /opt/sonatype/nexus/deploy/nexus-repository-composer-0.0.2.jar
+RUN curl -o /opt/sonatype/nexus/deploy/nexus-repository-composer-0.0.8-bundle.kar \
+ https://repo1.maven.org/maven2/org/sonatype/nexus/plugins/nexus-repository-composer/0.0.8/nexus-repository-composer-0.0.8-bundle.kar 
 
 WORKDIR /nexus-data
-
-
