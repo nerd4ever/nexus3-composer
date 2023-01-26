@@ -2,7 +2,7 @@ version: '3'
 services:
   nexus:
     container_name: nexus
-    image: nerd4ever/nexus3
+    image: getjv/nexus3
     restart: always
     ports:
       - "8081:8081"
